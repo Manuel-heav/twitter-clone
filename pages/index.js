@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Center from '../components/Center'
 import Sidebar from '../components/Sidebar'
 export default function Home() {
   return (
@@ -8,7 +9,12 @@ export default function Home() {
       <Head>
         <title>Twitter clone</title>
       </Head>
+
+      <main className="flex">
       <Sidebar />
+      <Center />
+
+     </main>
     </div>
   )
 }
