@@ -6,44 +6,46 @@ import { BookmarkIcon } from '@heroicons/react/outline'
 import { ViewListIcon } from '@heroicons/react/outline'
 import { UserIcon } from '@heroicons/react/outline'
 import { MailIcon } from '@heroicons/react/outline'
+import Image from 'next/image'
 const Sidebar = () => {
   return (
-    <div className="text-gray-500 p-10 border-x-2 border-gray-900">
-        <div className="space-y-4">
-                <button className="flex items-center hover:text-white">
-                    <HomeIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Home</p>
+    <div className="text-gray-400 p-7 border-x-2 border-gray-900">
+        <div className="space-y-2">
+                    <Image src="http://logok.org/wp-content/uploads/2014/08/Twitter-logo-bird_logo_2012.png" alt="" width="80" height="60"/>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <HomeIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Home</p>
                 </button>
 
-                <button className="flex items-center hover:text-white">
-                    <BellIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Notifications</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <BellIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Notifications</p>
                 </button>
 
-                <button className="flex items-center hover:text-white">
-                    <ViewListIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Lists</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <ViewListIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Lists</p>
                 </button>
 
-                <button className="flex items-center hover:text-white">
-                    <BookmarkIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">BookMark</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <BookmarkIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">BookMark</p>
                 </button>
 
 
-                <button className="flex items-center hover:text-white">
-                    <UserIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Profile</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <UserIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Profile</p>
                 </button>
 
-                <button className="flex items-center hover:text-white">
-                    <MailIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Mail</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <MailIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Mail</p>
                 </button>
 
-                <button className="flex items-center hover:text-white">
-                    <HashtagIcon className="h-8 w-8"/>
-                    <p className="text-xl p-5 items-center">Explore</p>
+                <button className="flex items-center hover:bg-gray-900 rounded-full p-2">
+                    <HashtagIcon className="h-7 w-7"/>
+                    <p className="text-lg pl-3 items-center">Explore</p>
                 </button>
 
             </div>
