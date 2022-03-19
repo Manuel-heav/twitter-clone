@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { ChatAltIcon, HeartIcon, RefreshIcon, UploadIcon } from '@heroicons/react/outline'
 
 const Post = () => {
   return (
@@ -14,6 +15,13 @@ const Post = () => {
                        </div>
                    </div>
                    <Image className="border-gray-700 rounded-lg"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.kk-kuK1SGavZXyIDjEpzKgHaEK%26pid%3DApi&f=1" alt="" width="500" height="500"/>
+   
+            <div className='flex justify-between mt-5 border-b border-t border-gray-700'>
+                <ChatAltIcon className="text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
+                <HeartIcon className="text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
+                <RefreshIcon className="text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
+                <UploadIcon className="text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
+            </div>
     </div>
   )
 }
