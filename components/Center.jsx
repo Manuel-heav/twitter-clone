@@ -4,7 +4,7 @@ import Post from './Post'
 
 const Center = () => {
   return (
-    <div className="text-gray-400 p-7 md:border-r border-gray-700 h-screen basis-1/2">
+    <div className="text-gray-400 p-7 md:border-r border-gray-700 h-screen md:basis-1/2 overflow-y-scroll scrollbar-hide">
       <div className='flex justify-between items-center'>
         <p className="text-white text-lg">Home</p>
         <SparklesIcon className="hidden md:block h-10 w-10 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
@@ -29,7 +29,7 @@ const Center = () => {
     <Post />
     <Post />
     <Post />
-    <Post />
+    <Post /> 
 
    
     

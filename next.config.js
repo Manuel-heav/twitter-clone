@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      'logok.org'
+      'logok.org',
+      'external-content.duckduckgo.com'
     ]
   }
 }

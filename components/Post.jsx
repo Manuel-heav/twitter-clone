@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Post = () => {
   return (
@@ -12,7 +13,7 @@ const Post = () => {
                            </div>
                        </div>
                    </div>
-                   <img className="ml-14 border-gray-700 rounded-lg"src="https://thechive.com/wp-content/uploads/2022/03/sad.jpg?resize=480,250" alt="" />
+                   <Image className="border-gray-700 rounded-lg"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.kk-kuK1SGavZXyIDjEpzKgHaEK%26pid%3DApi&f=1" alt="" width="500" height="500"/>
     </div>
   )
 }
