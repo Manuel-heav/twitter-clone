@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { ChatAltIcon, HeartIcon, RefreshIcon, UploadIcon } from '@heroicons/react/outline'
 
-const Post = () => {
+const Post = ({tweet, imageUrl}) => {
   return (
     <div className='text-gray-400 '>
                    <div className="mt-8 flex p-3">
@@ -10,11 +10,11 @@ const Post = () => {
                        <div>
                            <div>
                                 <p className="text-white font-medium">Manuael Heav <span className='text-xs text-gray-400'>@manuelheav . 50m</span></p>
-                                <p className="text-base">That is awesome</p>
+                                <p className="text-base">{tweet}</p>
                            </div>
                        </div>
                    </div>
-                   <Image className="border-gray-700 rounded-lg"src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.kk-kuK1SGavZXyIDjEpzKgHaEK%26pid%3DApi&f=1" alt="" width="500" height="500"/>
+                   <img className="border-gray-700 rounded-lg"src={imageUrl} alt="" width="500" height="500"/>
    
             <div className='flex justify-between mt-5 border-b border-t border-gray-700'>
                 <ChatAltIcon className="text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>

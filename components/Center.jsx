@@ -1,6 +1,8 @@
 import { PhotographIcon, SparklesIcon, ClipboardListIcon, EmojiHappyIcon, LinkIcon  } from '@heroicons/react/outline'
 import React from 'react'
-import { useState } from 'react/cjs/react.development'
+// import { useState } from 'react/cjs/react.development'
+// import { useEffect } from 'react/cjs/react.production.min'
+import {useState, useEffect} from 'react'
 import { db, storage } from './Firebase'
 import Post from './Post'
 
@@ -9,7 +11,7 @@ const Center = () => {
   const [tweet, setTweet] = useState("")
   const [image, setImage] = useState(null)
   const [progress, setProgress] = useState(0)
-  
+  const [ posts, setPosts] =  useState([])
 
 
   const handleChange = (e) => {
@@ -17,7 +19,9 @@ const Center = () => {
       setImage(e.target.files[0])
     }
   }
-  console.log(image)
+
+
+
 
   const handleUpload = () =>{
     const uploadTask = storage.ref(`images/${image.name}`).put(image);
@@ -52,6 +56,32 @@ const Center = () => {
 
     )
 }
+
+useEffect(()=>{
+  db.collection('tweets').onSnapshot(snapshot => {
+    setPosts(snapshot.docs.map(doc =>({
+      id: doc.id,
+      post: doc.data()
+    })))
+  })
+  console.log(posts)
+}, [])
+// const fetchPosts=async()=>{
+//   const response=db.collection('tweets');
+//   const data=await response.get();
+//   data.docs.forEach(item=>{
+//    setPosts([...posts,item.data()])
+//   })
+// }
+// useEffect(() => {
+//   fetchPosts();
+// }, [])
+
+
+  console.log(posts)
+  {posts.map((post) => (
+   console.log(post.post.imageUrl)
+  ))}
   return (
     <div className="text-gray-400 p-7 md:border-r border-gray-700 h-screen md:basis-1/2 overflow-y-scroll scrollbar-hide">
       <div className='flex justify-between items-center'>
@@ -66,7 +96,7 @@ const Center = () => {
 
     <div className='flex items-center justify-between mt-7 border-b border-gray-700 pb-2'>
       <div className='flex items-center ml-1 md:ml-10'>
-        <input type="file" onChange={handleChange}/><span className="text-green">{image != null ? (progress === 100 ? "Done" : progress + "%") : ""}</span>
+        <input type="file" onChange={handleChange}/><span className="text-sky-400/100 p-2">{image != null ? (progress === 100 ? "Done" : progress + "%") : ""}</span>
         {/* <PhotographIcon className="hidden md:block text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
         <ClipboardListIcon className="hidden md:block text-[#1d9bf0]  h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
         <EmojiHappyIcon className="hidden md:block text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
@@ -75,11 +105,9 @@ const Center = () => {
       <button onClick={handleUpload} className="pl-7 pt-2 pb-2 pr-7 bg-[#1d9bf0] text-white rounded-full">Tweet</button>
     </div>
 
-    <Post />
-    <Post />
-    <Post />
-    <Post />
-    <Post /> 
+    {posts.map((post) => (
+      <Post key={post.id} imageUrl={post.post.imageUrl} tweet={post.post.tweet}/>
+    ))}
 
    
     
