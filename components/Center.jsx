@@ -50,7 +50,7 @@ const Center = () => {
                     imageUrl: url,
                     // username: username
                 });
-               window.location.reload(true)
+              //  window.location.reload(true)
               })
         }
 
