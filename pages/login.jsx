@@ -1,7 +1,30 @@
 import Image from 'next/image'
 import React from 'react'
-
+import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import { auth } from '../components/Firebase'
+import { useRouter } from 'next/router';
+import {useState } from 'react'
 const Login = () => {
+ 
+  const [username, setUsername] = useState('')
+  const [imageUrl, setImageUrl] = useState('')
+
+  const provider = new GoogleAuthProvider(); 
+  const router = useRouter()
+  const login = () => {
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    setUsername(result.user.displayName)
+    setImageUrl(result.user.photoURL)
+    console.log(result.user.displayName, result.user.photoURL)
+    router.push('/')
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(`Oops!`, errorMessage, errorCode)
+  });
+  }
   return (
     <div className="bg-black flex overflow-hidden h-screen">
         <div className="hidden md:block h-screen">
@@ -14,7 +37,7 @@ const Login = () => {
           <h1 className="text-white text-[3.5rem] mt-10 ml-10 font-black">Happening now</h1>
           <h1 className="text-white text-[2.5rem] ml-10 font-bold">Join Twitter today.</h1>
 
-          <div className="bg-white rounded-full cursor-pointer md:ml-10 mb-100">
+          <div className="bg-white rounded-full cursor-pointer md:ml-10 mb-100" onClick={login}>
                    <div className="mt-20 flex p-3 items-center">
                          <img className="h-15 w-10 rounded-full mr-3" src="https://pluspng.com/img-png/google-logo-png-open-2000.png" alt="" />
                        <div>

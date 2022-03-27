@@ -31,6 +31,7 @@ It consists of
 * [ ] Deal with Routing
 * [ ] Deal with Auth
 ### lol
+* [ ] Set up React-Context-api😖
 * [ ] Text E2E functionality(not gonna do it)
 * [ ] Set up real twitter auth( not gonna do it )
 * [ ] create some awesome features with the twitter API(guess what? not gonna do it either)

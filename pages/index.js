@@ -3,7 +3,11 @@ import Image from 'next/image'
 import Center from '../components/Center'
 import InfoBar from '../components/InfoBar'
 import Sidebar from '../components/Sidebar'
+import { auth } from '../components/Firebase';
+
 export default function Home() {
+
+  console.log(auth)
   return (
     <div className="bg-black h-screen overflow-hidden">
 
