@@ -1,21 +1,21 @@
+
 export const initialState = {
-    username: 'hello',
-    imageURL: 'sup',
+    userInfo: [
+         "anonymus",
+    ],
 };
 
 const reducer = (state, action) => {
     switch(action.type){
-        case 'UPDATE_USERNAME':
+        case 'UPDATE_USER':
             return { 
-                username: username
+                ...state,
+                favorite: [...state.userInfo, action.item]
             };
-            case 'UPDATE_IMAGEURL':
-                    return { 
-                        imageURL: imageURL
-                    };
+      
         default: 
-            return state;
+            return state;s
     }
 }
 
-export default reducer
+export default reduce

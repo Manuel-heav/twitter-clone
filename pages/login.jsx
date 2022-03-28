@@ -7,7 +7,7 @@ import {useState } from 'react'
 import {useStateValue} from '../components/StateProvider'
 
 const Login = () => {
-  const [{username, imageURL}, dispatch] = useStateValue()
+  const [{userInfo}, dispatch] = useStateValue()
   const [tempUsername, setTempUsername] = useState('')
   const [tempImageUrl, setTempImageUrl] = useState('')
 
@@ -32,8 +32,11 @@ const Login = () => {
 
   const update_username = () => {
     dispatch({
-      type: 'UPDATE_USERNAME',
-      username:  tempUsername
+      type: 'UPDATE_USER',
+      item:  {
+        username: tempUsername,
+        imageUrl: tempImageUrl
+      }
     })
   }
   return (
