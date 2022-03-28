@@ -4,9 +4,11 @@ import React from 'react'
 // import { useEffect } from 'react/cjs/react.production.min'
 import {useState, useEffect} from 'react'
 import { db, storage } from './Firebase'
+import {useStateValue} from './StateProvider'
 import Post from './Post'
-
 const Center = () => {
+  const [{username}, dispatch] = useStateValue()
+  console.log(username)
 
   const [tweet, setTweet] = useState("")
   const [image, setImage] = useState(null)
