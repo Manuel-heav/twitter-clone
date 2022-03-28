@@ -1,21 +1,23 @@
-
 export const initialState = {
-    userInfo: [
-         "anonymus",
-    ],
+    user: null,
 };
 
-const reducer = (state, action) => {
-    switch(action.type){
-        case 'UPDATE_USER':
-            return { 
-                ...state,
-                favorite: [...state.userInfo, action.item]
-            };
-      
-        default: 
-            return state;s
-    }
+
+export const actionTypes = {
+    SET_USER: "SET_USER",
 }
 
-export default reduce
+const reducer = (state, action) => {
+    console.log(action)
+    switch (action.type) {
+        case actionTypes.SET_USER:
+            return {
+                ...state, 
+                user: action.user,
+            };
+
+            default:
+                return state;
+    }
+};
+export default reducer;
