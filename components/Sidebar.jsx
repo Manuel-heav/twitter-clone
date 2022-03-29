@@ -7,7 +7,10 @@ import { ViewListIcon } from '@heroicons/react/outline'
 import { UserIcon } from '@heroicons/react/outline'
 import { MailIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
+import { useStateValue } from './StateProvider'
+
 const Sidebar = () => {
+    const [{ user }, dispatch] = useStateValue();
   return (
     <div className="text-gray-400 p-7 border-r border-gray-700 h-screen basis-1/5">
         <div className="space-y-2">
@@ -53,10 +56,10 @@ const Sidebar = () => {
 
                <div className="hover:bg-gray-900 rounded-full cursor-pointer">
                    <div className="mt-8 flex p-3">
-                       <img className="h-15 w-10 rounded-full mr-3" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.shareicon.net%2Fdata%2F2016%2F05%2F24%2F770117_people_512x512.png&f=1&nofb=1" alt="" />
+                       <img style={{objectFit: 'contain'}}className="h-15 w-10 rounded-full mr-3" src={user.photoURL} alt="" />
                        <div>
-                           <p className="hidden md:block text-white font-medium">Manuael Heav</p>
-                           <p className="hidden md:block text-xs">@Manuael</p>
+                           <p className="hidden md:block text-white font-medium">{user.displayName}</p>
+                           <p className="hidden md:block text-xs">{user.email}</p>
                        </div>
                    </div>
                </div>

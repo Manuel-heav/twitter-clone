@@ -8,7 +8,6 @@ import {useStateValue} from './StateProvider'
 import Post from './Post'
 const Center = () => {
   const [{ user }, dispatch] = useStateValue();
- 
 
   const [tweet, setTweet] = useState("")
   const [image, setImage] = useState(null)
@@ -50,7 +49,7 @@ const Center = () => {
                     // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     tweet: tweet,
                     imageUrl: url,
-                    // username: username
+                    username: user.displayName
                 });
               })
         }
@@ -79,15 +78,11 @@ useEffect(()=>{
         <input onChange={e=>setTweet(e.target.value)} type="text" className='bg-transparent outline-none text-lg' placeholder="What's happening?" />
       </div>
 
-    <div className='flex items-center justify-between mt-7 border-b border-gray-700 pb-2'>
-      <div className='flex items-center ml-1 md:ml-10'>
-        <input type="file" onChange={handleChange}/><span className="text-sky-400/100 p-2">{image != null ? (progress === 100 ? "Done" : progress + "%") : ""}</span>
-        {/* <PhotographIcon className="hidden md:block text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
-        <ClipboardListIcon className="hidden md:block text-[#1d9bf0]  h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
-        <EmojiHappyIcon className="hidden md:block text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/>
-        <LinkIcon className="hidden md:block text-[#1d9bf0] h-9 w-9 hover:bg-gray-900 rounded-full p-2 cursor-pointer"/> */}
+    <div className='md:flex items-center justify-between mt-7 border-b border-gray-700 pb-2'>
+      <div className='flex items-center md:ml-10'>
+        <input type="file" onChange={handleChange}/><span className="text-sky-400/100 ">{image != null ? (progress === 100 ? "Done" : progress + "%") : ""}</span>
       </div>
-      <button onClick={handleUpload} className="pl-7 pt-2 pb-2 pr-7 bg-[#1d9bf0] text-white rounded-full">Tweet</button>
+      <button onClick={handleUpload} className="mt-5 md:mt-0 pl-16 pt-2 pb-2 pr-16 bg-[#1d9bf0] text-white rounded-full">Tweet</button>
     </div>
 
     {posts.map((post) => (
