@@ -51,7 +51,7 @@ const Center = () => {
                     tweet: tweet,
                     imageUrl: url,
                     username: user.displayName,
-                    profileurl: username.photoURL,
+                    profileurl: user.photoURL,
                     comments: comments
                 });
               })
@@ -89,7 +89,7 @@ useEffect(()=>{
     </div>
 
     {posts.map((post) => (
-      <Post key={post.id} imageUrl={post.post.imageUrl} tweet={post.post.tweet}/>
+      <Post key={post.id} imageUrl={post.post.imageUrl} tweet={post.post.tweet} profileUrl={user.photoURL}/>
     ))}
 
    

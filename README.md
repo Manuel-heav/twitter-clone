@@ -29,6 +29,8 @@ It consists of
 * [ X ] Finish Image posting functionality
 * [ X ] Set up Login Component
 * [ X ] Set up React-Context-api😖
+* [ ] Set up modal to display comments
+* [ ] Set up SelectedTweet Component
 * [ ] Set up commenting functionality
 * [ ] Text E2E functionality(not gonna do it)
 * [ ] Set up real twitter auth( not gonna do it )
