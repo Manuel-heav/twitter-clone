@@ -17,6 +17,8 @@ It consists of
 - Anyhow nobody will read this, but enjoyyy!
 
 
+### Tasks
+
 * [ X ] Set up Firebase
 * [ X ] Set up Firestore
 * [ X ] Set up Realtime Database
@@ -26,12 +28,8 @@ It consists of
 * [ X ] Deal With Info Component
 * [ X ] Finish Image posting functionality
 * [ X ] Set up Login Component
-
-### haha very funny, there is no routing in next, damn, totally forgot about that
-* [ ] Deal with Routing
-* [ ] Deal with Auth
-### lol
-* [ ] Set up React-Context-api😖
+* [ X ] Set up React-Context-api😖
+* [ ] Set up commenting functionality
 * [ ] Text E2E functionality(not gonna do it)
 * [ ] Set up real twitter auth( not gonna do it )
 * [ ] create some awesome features with the twitter API(guess what? not gonna do it either)
