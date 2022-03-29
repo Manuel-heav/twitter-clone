@@ -7,8 +7,8 @@ import { db, storage } from './Firebase'
 import {useStateValue} from './StateProvider'
 import Post from './Post'
 const Center = () => {
-  const [{username}, dispatch] = useStateValue()
-  console.log(username)
+  const [{ user }, dispatch] = useStateValue();
+ 
 
   const [tweet, setTweet] = useState("")
   const [image, setImage] = useState(null)
@@ -52,7 +52,6 @@ const Center = () => {
                     imageUrl: url,
                     // username: username
                 });
-              //  window.location.reload(true)
               })
         }
 
@@ -66,24 +65,8 @@ useEffect(()=>{
       post: doc.data()
     })))
   })
-  console.log(posts)
 }, [])
-// const fetchPosts=async()=>{
-//   const response=db.collection('tweets');
-//   const data=await response.get();
-//   data.docs.forEach(item=>{
-//    setPosts([...posts,item.data()])
-//   })
-// }
-// useEffect(() => {
-//   fetchPosts();
-// }, [])
 
-
-  console.log(posts)
-  {posts.map((post) => (
-   console.log(post.post.imageUrl)
-  ))}
   return (
     <div className="text-gray-400 p-7 md:border-r border-gray-700 h-screen md:basis-1/2 overflow-y-scroll scrollbar-hide">
       <div className='flex justify-between items-center'>

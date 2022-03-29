@@ -3,18 +3,18 @@ import React from 'react'
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import { auth } from '../components/Firebase'
 import { useRouter } from 'next/router';
+import { actionTypes } from '../components/reducer'
 import {useState } from 'react'
 import {useStateValue} from '../components/StateProvider'
 
 const Login = () => {
   const [{}, dispatch] = useStateValue()
 
-
   const provider = new GoogleAuthProvider(); 
   const router = useRouter()
 
   const login = () => {
-    signInWithPopup(provider)
+    signInWithPopup(auth, provider)
     .then((result) => {
         dispatch({
             type: actionTypes.SET_USER,
@@ -41,8 +41,8 @@ const Login = () => {
           <h1 className="text-white text-[2.5rem] ml-10 font-bold">Join Twitter today.</h1>
 
           <div className="bg-white rounded-full cursor-pointer md:ml-10 mb-100" onClick={login}>
-                         <img className="h-15 w-10 rounded-full mr-3" src="https://pluspng.com/img-png/google-logo-png-open-2000.png" alt="" />
                    <div className="mt-20 flex p-3 items-center">
+                         <img className="h-15 w-10 rounded-full mr-3" src="https://pluspng.com/img-png/google-logo-png-open-2000.png" alt="" />
                        <div>
                            <p className="font-medium">Sign In with Google</p>
                        </div>
