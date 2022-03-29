@@ -10,6 +10,7 @@ const Center = () => {
   const [{ user }, dispatch] = useStateValue();
 
   const [tweet, setTweet] = useState("")
+  const [comments, setComments] = useState([])
   const [image, setImage] = useState(null)
   const [progress, setProgress] = useState(0)
   const [ posts, setPosts] =  useState([])
@@ -49,7 +50,9 @@ const Center = () => {
                     // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     tweet: tweet,
                     imageUrl: url,
-                    username: user.displayName
+                    username: user.displayName,
+                    profileurl: username.photoURL,
+                    comments: comments
                 });
               })
         }
