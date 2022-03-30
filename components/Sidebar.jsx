@@ -54,7 +54,7 @@ const Sidebar = () => {
                 <button className="hidden md:block pl-20 pt-3 pb-3 pr-20 bg-[#1d9bf0] text-white rounded-full">Tweet</button>
                 
 
-               <div className="hover:bg-gray-900 rounded-full cursor-pointer">
+               <div className="hover:bg-gray-900 rounded-full cursor-pointer" onClick={logout}>
                    <div className="mt-8 flex p-3">
                        <img style={{objectFit: 'contain'}}className="h-15 w-10 rounded-full mr-3" src={user.photoURL} alt="" />
                        <div>
