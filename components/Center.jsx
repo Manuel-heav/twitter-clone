@@ -89,7 +89,7 @@ useEffect(()=>{
     </div>
 
     {posts.map((post) => (
-      <Post key={post.id} imageUrl={post.post.imageUrl} tweet={post.post.tweet} profileUrl={user.photoURL}/>
+      <Post key={post.id} imageUrl={post.post.imageUrl} tweet={post.post.tweet} profileUrl={post.post.profileurl} username={post.post.username}/>
     ))}
 
    

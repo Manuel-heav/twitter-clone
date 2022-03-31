@@ -2,14 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { ChatAltIcon, HeartIcon, RefreshIcon, UploadIcon } from '@heroicons/react/outline'
 
-const Post = ({tweet, imageUrl, profileUrl}) => {
+const Post = ({tweet, imageUrl, profileUrl, username}) => {
   return (
     <div className='text-gray-400 '>
                    <div className="mt-8 flex p-3">
                        <img className="h-15 w-10 rounded-full mr-3" style={{objectFit: 'contain'}} src={profileUrl}alt="" />
                        <div>
                            <div>
-                                <p className="text-white font-medium">Manuael Heav <span className='text-xs text-gray-400'>@manuelheav . 50m</span></p>
+                                <p className="text-white font-medium">{username}<span className='text-xs text-gray-400'>@manuelheav . 50m</span></p>
                                 <p className="text-base">{tweet}</p>
                            </div>
                        </div>
